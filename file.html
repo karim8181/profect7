@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body id="main">
+<center>
+<img onmousedown="rottrue()" onmouseup="rotfalse()" id="ps" src="spin1.jpg" width="200" height="200">
+</center>
+<br/>
+<center>
+<img onclick="sp1()" src="spin1.jpg" width="50" height="50" style="cursor: pointer">
+<img onclick="sp2()" src="spin2.jpg" width="50" height="50" style="cursor: pointer">
+<img onclick="sp3()" src="spin3.jpg" width="50" height="50" style="cursor: pointer">
+</center>
+</br>
+<center>
+    <img onclick="fon()" src="les.jpg" width="50" height="50" style="cursor: pointer">
+    <img onclick="fon2()" src="les2.jpg" width="50" height="50" style="cursor: pointer">
+    <img onclick="fon3()" src="les3.jpg" width="50" height="50" style="cursor: pointer">
+</center>
+</body>
+<script>
+
+    rot=false
+    deg =0
+
+    setInterval(function () {
+        if(rot==true){
+        deg+=10
+        document.getElementById('ps').style.transform = 'rotate('+deg+'deg)'}
+    },100)
+    function rottrue() {
+        rot=true
+    }
+    function rotfalse() {
+        rot=false
+    }
+    function fon() {
+        document.getElementById('main').style="background: url('les.jpg') no-repeat center;background-size: cover; "
+    }
+    function fon2() {
+        document.getElementById('main').style="background: url('les2.jpg') no-repeat center;background-size: cover;"
+    }
+    function fon3() {
+        document.getElementById('main').style="background: url('les3.jpg') no-repeat center;background-size: cover; "
+    }
+    function sp2() {
+        document.getElementById('ps').src = 'spin2.jpg'
+    }
+    function sp1() {
+        document.getElementById('ps').src = 'spin1.jpg'
+    }
+    function sp3() {
+        document.getElementById('ps').src = 'spin3.jpg'
+    }
+</script>
+</html>
